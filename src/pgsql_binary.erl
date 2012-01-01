@@ -5,7 +5,7 @@
 
 -export([encode/3, decode/3, supports/1]).
 
--include_lib("zotonic.hrl").
+% -include_lib("zotonic.hrl").
 
 -define(int32, 1/big-signed-unit:32).
 -define(TERM_MAGIC_NUMBER, 16#01326A3A:1/big-unsigned-unit:32).

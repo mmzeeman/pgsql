@@ -20,7 +20,7 @@
 -export([executing/2, closing/2, synchronizing/2]).
 
 -include("pgsql.hrl").
--include("zotonic.hrl").
+% -include("zotonic.hrl").
 
 -record(state, {
           async,

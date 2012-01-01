@@ -16,7 +16,7 @@
 -export([with_transaction/2]).
 
 -include("pgsql.hrl").
--include("zotonic.hrl").
+%-include("zotonic.hrl").
 
 -define(TIMEOUT, 50000).
 
@@ -119,7 +119,7 @@ equery(C, Sql, Parameters) ->
             ok = pgsql_connection:equery(C, S, Typed_Parameters),
             receive_result(C);
         Error ->
-            ?LOG("SQL error ~p : ~p", [Error, Sql]),
+            %?LOG("SQL error ~p : ~p", [Error, Sql]),
             Error
     end.
 
@@ -179,8 +179,8 @@ with_transaction(C, F) ->
         {ok, [], []} = squery(C, "COMMIT"),
         R
     catch
-        E:Why ->
-            ?LOG("Exception in transaction: \"~p,~p\"", [E,Why]),
+        _E:Why ->
+            %?LOG("Exception in transaction: \"~p,~p\"", [E,Why]),
             squery(C, "ROLLBACK"),
             {rollback, Why}
     end.
