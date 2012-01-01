@@ -1,0 +1,16 @@
+{application, pgsql,
+ [
+  {description, "postgres sql interface"},
+  {vsn, "1"},
+  {modules, [pgsql, 
+             pgsql_binary,
+             pgsql_connection,
+             pgsql_datatime,
+             pgsql_types]},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  {env, []}
+ ]}.
