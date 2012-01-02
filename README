@@ -1,0 +1,4 @@
+Readme
+
+Copied the adapted pgsql sources from zotonic into a new project 
+to be able to use it stand alone
