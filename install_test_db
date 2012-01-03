@@ -1,0 +1,7 @@
+#!/bin/bash
+
+su -l postgres -c "psql -f `pwd`/test/test_schema.sql" && \
+echo "# pgsql erlang driver test settings
+host    epgsql_test_db1 epgsql_test_md5         127.0.0.1/32    md5
+host    epgsql_test_db1 epgsql_test_cleartext   127.0.0.1/32    password" >> /etc/postgresql/8.4/main/pg_hba.conf && \
+/etc/init.d/postgresql reload 

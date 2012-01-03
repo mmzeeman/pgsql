@@ -5,7 +5,7 @@
 -export([run_tests/0]).
 
 -include_lib("eunit/include/eunit.hrl").
--include("pgsql/include/pgsql.hrl").
+-include_lib("pgsql/include/pgsql.hrl").
 
 -define(host, "localhost").
 
