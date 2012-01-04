@@ -9,15 +9,6 @@
 
 -define(host, "localhost").
 
-connect_test() ->
-    connect_only([[]]).
-
-connect_to_db_test() ->
-    connect_only([[{database, "epgsql_test_db1"}]]).
-
-connect_as_test() ->
-    connect_only(["epgsql_test1", [{database, "epgsql_test_db1"}]]).
-
 connect_with_cleartext_test() ->
     connect_only(["epgsql_test_cleartext",
                   "epgsql_test_cleartext",
@@ -380,7 +371,7 @@ connect_only(Args) ->
     flush().
 
 with_connection(F) ->
-    {ok, C} = pgsql:connect(?host, "epgsql_test1", [{database, "epgsql_test_db1"}]),
+    {ok, C} = pgsql:connect(?host, "epgsql_test_md5", "epgsql_test_md5", [{database, "epgsql_test_db1"}]),
     try
         F(C)
     after

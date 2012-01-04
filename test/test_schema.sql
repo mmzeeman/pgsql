@@ -21,6 +21,9 @@ GRANT ALL ON DATABASE epgsql_test_db1 to epgsql_test;
 GRANT ALL ON DATABASE epgsql_test_db1 to epgsql_test_md5;
 GRANT ALL ON DATABASE epgsql_test_db1 to epgsql_test_cleartext;
 GRANT ALL ON DATABASE epgsql_test_db2 to epgsql_test;
+GRANT ALL ON DATABASE epgsql_test_db2 to epgsql_test_md5;
+GRANT ALL ON DATABASE epgsql_test_db2 to epgsql_test_cleartext;
+
 
 \c epgsql_test_db1;
 
