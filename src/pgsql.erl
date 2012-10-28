@@ -16,7 +16,8 @@
 -export([with_transaction/2]).
 
 -include("pgsql.hrl").
--include_lib("zutils/include/zutils.hrl").
+% -include_lib("zutils/include/zutils.hrl").
+-define(LOG(Msg, Args), error_logger:info_msg(Msg, Args)).
 
 -define(TIMEOUT, 50000).
 
